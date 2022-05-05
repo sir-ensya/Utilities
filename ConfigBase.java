@@ -1,5 +1,4 @@
 import com.google.common.base.Charsets;
-import dev.ensya.creditshop.CreditShop;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -74,7 +73,7 @@ public class ConfigBase {
         resourcePath = resourcePath.replace('\\', '/');
         InputStream in = getResource(resourcePath);
         if (in == null) {
-            throw new IllegalArgumentException("The embedded resource '" + resourcePath + "' cannot be found in CreditShop plugin.");
+            throw new IllegalArgumentException("The embedded resource '" + resourcePath + "' cannot be found in Main plugin.");
         }
 
         File outFile = new File(dataFolder, resourcePath);
@@ -106,7 +105,7 @@ public class ConfigBase {
     @Nullable
     public InputStream getResource(@NotNull String filename) {
         try {
-            URL url = CreditShop.getInstance().getClass().getClassLoader().getResource(filename);
+            URL url = Main.getInstance().getClass().getClassLoader().getResource(filename);
 
             if (url == null) {
                 return null;
