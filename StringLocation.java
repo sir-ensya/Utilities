@@ -89,6 +89,10 @@ public class StringLocation {
         return new Location(Bukkit.getWorld(worldName), x, y, z, yaw, pitch);
     }
     
+    public @NotNull String toText() {
+        return "worldName:" + worldName + ",x:" + x + ",y:" + y + ",z:" + z + ",yaw:" + yaw + ",pitch:" + pitch;
+    }
+    
     public StringLocation setWorldName(@NotNull World world) {
         this.worldName = world.getName();
         return this;
