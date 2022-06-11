@@ -118,5 +118,9 @@ public class ConfigBase {
             return null;
         }
     }
+    
+    public static @NotNull ConfigBase generate(@NotNull File folder, @NotNull String name) {
+        return new ConfigBase(folder, name);
+    }
 
 }
