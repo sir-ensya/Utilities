@@ -46,6 +46,16 @@ public class ItemBuilder {
     public ItemMeta getItemMeta() {
         return itemStack.getItemMeta();
     }
+    
+    /**
+     * Setting custom model data of item meta
+     * @param data custom model data
+     * @return this with new custom model data
+     */
+    public ItemBuilder setCustomModelData(Integer data) {
+        getItemMeta().setCustomModelData(data);
+        return this;
+    }
 
     /**
      * Setting lore of item meta
