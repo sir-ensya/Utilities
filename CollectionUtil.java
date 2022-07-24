@@ -12,9 +12,10 @@ public class CollectionUtil {
     }
 
     public static <T> @Nullable T filterAndGet(@NotNull Collection<T> collection, @NotNull Predicate<T> predicate) {
-        List<T> matching = collection.stream().filter(predicate).toList();
-        if (matching.size() == 0) return null;
-        return matching.get(0);
+        return collection.stream()
+            .filter(predicate)
+            .findFirst()
+            .orElse(null);
     }
 
 }
